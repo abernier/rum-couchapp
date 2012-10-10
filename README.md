@@ -4,10 +4,10 @@
 npm install
 ```
 
-## DEPLOY
+## Usage
 
 ```sh
-make push
+./index --help
 ```
 
 ## TODO
