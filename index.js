@@ -140,4 +140,4 @@ ddoc.views.tenkpointsPerGirls = {
 var couchapp = require('couchapp');
 var path = require('path');
 
-couchapp.loadAttachments(ddoc, path.join(__dirname, '../webapp'));
+couchapp.loadAttachments(ddoc, path.join(__dirname, 'node_modules/rum-webapp'));
