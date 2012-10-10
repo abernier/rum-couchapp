@@ -1,3 +1,15 @@
+## INSTALL
+
+```sh
+npm install
+```
+
+## DEPLOY
+
+```sh
+make push
+```
+
 ## TODO
 
  - Add validation: http://guide.couchdb.org/draft/validation.html
