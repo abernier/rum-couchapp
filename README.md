@@ -11,7 +11,7 @@ npm install
 ## Usage
 
 ```sh
-./index --help
+./index.js --help
 ```
 
 ## TODO
