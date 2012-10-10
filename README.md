@@ -1,5 +1,9 @@
 ## INSTALL
 
+Requirements:
+
+ - http://nodejs.org/download/
+
 ```sh
 npm install
 ```
