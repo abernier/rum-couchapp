@@ -1,9 +1,6 @@
 var ddoc = {
   _id: '_design/app',
   language: 'javascript',
-  lib: {
-
-  },
   views: {},
   lists: {},
   shows: {}/*,
@@ -83,12 +80,15 @@ ddoc.views.freshActiveAndSexy = {
 
     var mailsScore = 100 - percentile('mails', str2int(doc.mail));
     var basketsScore = 100 - percentile('baskets', str2int(doc.basket));
+    var mailsAndBasketsScore = (1*mailsScore + 8*basketsScore)/(1+8);
+    
+    var activeScore = 100*Math.max(60 - Math.floor(ms2day(new Date().getTime() - (doc.updatedAt || 0))), 0)/60;
+
     var pointsScore = percentile('points', str2int(doc.points));
-    var activeScore = Math.max(100 - Math.round(ms2day(new Date().getTime() - (doc.updatedAt || 0))), 0);
 
-    var globalScore = (5*((mailsScore + basketsScore)/2) + 3*activeScore)/(5+3);
+    var globalScore = (3*(mailsScore+basketsScore)/2+activeScore)/(4);
 
-    emit([-globalScore, -pointsScore], doc);
+    emit([-globalScore], doc);
   }
 };
 
