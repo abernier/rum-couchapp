@@ -14,6 +14,10 @@ npm install
 ./index.js --help
 ```
 
+## Doc
+
+ - Statistics balancing: https://docs.google.com/spreadsheet/ccc?key=0AgQNm5fx5y30dHJoVWlwQmllSWRLWUFZZ3VLemlRWlE
+
 ## TODO
 
  - Add validation: http://guide.couchdb.org/draft/validation.html
