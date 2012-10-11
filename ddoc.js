@@ -111,3 +111,9 @@ ddoc.views.sample = {
     emit(null, [str2int(doc.mail), str2int(doc.basket), str2int(doc.points)]);
   }
 };
+
+ddoc.views.toBeConsolidated = {
+  map: function(doc) {
+    emit(doc.updatedAt || 0, doc);
+  }
+}
