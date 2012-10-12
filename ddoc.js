@@ -113,7 +113,11 @@ ddoc.views.sample = {
 };
 
 ddoc.views.toBeConsolidated = {
-  map: function(doc) {
-    emit(doc.updatedAt || 0, doc);
+  map: function (doc) {
+    //  Priority:
+    //   1. those who haven't consolidated datas (ex: doc.visit)
+    //   2. those there was a long time we haven't consolidate them
+    //
+    emit([(doc.visit ? 1 : 0), (doc.updatedAt || 0)], doc);
   }
 }
